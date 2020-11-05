@@ -1,6 +1,6 @@
-const { combineReducers } = require("redux");
-import entitesReducer from "./enities";
+import { combineReducers } from "redux";
+import entitiesReducer from "./entities";
 
 export default combineReducers({
-  entities: entitesReducer,
+  entities: entitiesReducer
 });

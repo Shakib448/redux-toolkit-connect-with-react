@@ -1,19 +1,21 @@
-const { createSlice } = require("@reduxjs/toolkit");
+import { createSlice } from "@reduxjs/toolkit";
 
-let projectId = 0;
-const project = createSlice({
+let lastId = 0;
+
+const slice = createSlice({
   name: "projects",
   initialState: [],
   reducers: {
+    // action => action handler
     projectAdded: (projects, action) => {
       projects.push({
-        id: ++projectId,
-        name: action.payload.name,
+        id: ++lastId,
+        name: action.payload.name
       });
-    },
-  },
+    }
+  }
 });
 
-export const { projectAdded } = project.actions;
+export const { projectAdded } = slice.actions;
 
-export default project.reducer;
+export default slice.reducer;

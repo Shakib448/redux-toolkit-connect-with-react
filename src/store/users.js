@@ -1,19 +1,21 @@
-const { createSlice } = require("@reduxjs/toolkit");
+import { createSlice } from "@reduxjs/toolkit";
 
-let usersId = 0;
-const user = createSlice({
+let lastId = 0;
+
+const slice = createSlice({
   name: "users",
   initialState: [],
   reducers: {
-    userAdded: (user, action) => {
-      user.push({
-        id: ++usersId,
-        name: action.payload.name,
+    // action => action handler
+    userAdded: (users, action) => {
+      users.push({
+        id: ++lastId,
+        name: action.payload.name
       });
-    },
-  },
+    }
+  }
 });
 
-export const { userAdded } = user.actions;
+export const { userAdded } = slice.actions;
 
-export default user.reducer;
+export default slice.reducer;
