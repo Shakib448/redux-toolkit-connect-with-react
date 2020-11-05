@@ -21,12 +21,4 @@ const Bugs = () => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  bugs: state.entities.bugs.list,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  loadBugs: () => dispatch(loadBugs()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Bugs);
+export default Bugs;
